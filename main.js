@@ -1,10 +1,13 @@
 var canvas;
 var ctx;
 
-var cardNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-var cardTypes = ["clubs", "spades", "hearts", "diamonds"];
+var cards[];
 
-var cards[52];
+function card(value, name, suit){
+	this.value = value;
+	this.name = name;
+	this.suit = suit;
+}
 
 
 
@@ -12,20 +15,19 @@ window.onload = function() {
 	canvas = document.getElementById('gameCanvas');
 	ctx = canvas.getContext('2d');
 
-	shuffle();
+	cards = deck();
 }
 
-function shuffle() {
+function deck(){
+	this.names = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+	this.suits = ['Hearts','Diamonds','Spades','Clubs'];
+	var cards = [];
+    
+    for( var s = 0; s < this.suits.length; s++ ) {
+        for( var n = 0; n < this.names.length; n++ ) {
+            cards.push( new card( n+1, this.names[n], this.suits[s] ) );
+        }
+    }
 
-
-	for(var i = 0; i < 52; i++) {
-		for(var j = 0; j < j; i++) {
-			for(var k = 0; k < 13; k++) {
-				cards[i] = (String)cardNumber[j] + cardTypes[k];
-		}
-	}
-	}
-
-	
+    return cards;
 }
-
