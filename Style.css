@@ -1,0 +1,29 @@
+body {
+	margin: 0;
+}
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+.img-player1 {
+	
+}
+
+img.img-player1 {
+	margin-left: 4.9%;
+	margin-right: 4.9%;
+}
+
+.img-player2 {
+	
+}
+
+img.img-player2 {
+	margin-left: 4.9%;
+	margin-right: 4.9%;
+	margin-top: 10%;
+}
+

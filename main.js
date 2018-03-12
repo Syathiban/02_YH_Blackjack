@@ -1,5 +1,16 @@
-var canvas;
-var ctx;
+var img11 = document.getElementById('11');
+var img12 = document.getElementById('12');
+var img13 = document.getElementById('13');
+var img14 = document.getElementById('14');
+var img15 = document.getElementById('15');
+
+
+var img21 = document.getElementById('21');
+var img22 = document.getElementById('22');
+var img23 = document.getElementById('23');
+var img24 = document.getElementById('24');
+var img25 = document.getElementById('25');
+
 
 var cards;
 
@@ -10,19 +21,23 @@ function card(value, name, suit){
 }
 
 
-
 window.onload = function() {
-	var dimension = [document.documentElement.clientWidth, document.documentElement.clientHeight];
+	img11 = document.getElementById('11');
+	img12 = document.getElementById('12');
+	img13 = document.getElementById('13');
+	img14 = document.getElementById('14');
+	img15 = document.getElementById('15');
 
-	canvas = document.getElementById('gameCanvas');
-	ctx = canvas.getContext('2d');
 
-	canvas.width = dimension[0];
-	canvas.height = dimension[1];
+	img21 = document.getElementById('21');
+	img22 = document.getElementById('22');
+	img23 = document.getElementById('23');
+	img24 = document.getElementById('24');
+	img25 = document.getElementById('25');
+	
 	cards = deck();
 	shuffle();
-	console.log(cards[2].suit + " " + cards[2].name);
-	draw();
+	setImage();
 	
 }
 
@@ -43,7 +58,7 @@ function shuffle () {
 
 function deck(){
 	this.names = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
-	this.suits = ['Hearts','Diamonds','Spades','Clubs'];
+	this.suits = ['H','D','S','C'];
 	var cards = [];
     
     for( var s = 0; s < this.suits.length; s++ ) {
@@ -55,19 +70,53 @@ function deck(){
     return cards;
 }
 
-function draw() {
-	ctx.beginPath();
-	ctx.moveTo(0, canvas.height/2);
-	ctx.lineTo(canvas.width, canvas.height/2);
-	ctx.stroke();
-
-	ctx.rect(canvas.width/2 - 75, 100, 150, 200);
-	ctx.stroke();
-
+function startGame() {
+	for(var i = 0; i < cards.length; i++) {
+		setImage(cards[i].value, cards[i].suits);
+	}
 }
 
-function newCardUp() {
-	setInterval(function() {
-		
-	}, 1000/30);
+function setImage(val, suit, img) {
+	
+	switch(img) {
+		case 11: 
+			img11.src = val + suit + ".png";
+			break;
+		case 12:
+			img12.src = val + suit + ".png";
+			break;
+		case 13: 
+			img13.src = val + suit + ".png";
+			break;
+		case 14:
+			img14.src = val + suit + ".png";
+			break;
+		case 15: 
+			img15.src = val + suit + ".png";
+			break;
+		case 21:
+			img21.src = val + suit + ".png";
+			break;
+		case 22:
+			img22.src = val + suit + ".png";
+			break;
+		case 23:
+			img23.src = val + suit + ".png";
+			break;
+		case 24:
+			img24.src = val + suit + ".png";
+			break;
+		case 25:
+			img25.src = val + suit + ".png";
+			break;
+	}
+	
 }
+
+
+/*
+
+
+
+
+*/
